@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Birthday_" representedClassName="Birthday_" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="month" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="student" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student_" inverseName="bithday" inverseEntity="Student_" syncable="YES"/>
+    </entity>
+    <entity name="ClassOfStudent_" representedClassName="ClassOfStudent_" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="student" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student_" inverseName="inClass" inverseEntity="Student_" syncable="YES"/>
+    </entity>
+    <entity name="Student_" representedClassName="Student_" syncable="YES" codeGenerationType="class">
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="otherInfor" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="bithday" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Birthday_" inverseName="student" inverseEntity="Birthday_" syncable="YES"/>
+        <relationship name="inClass" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ClassOfStudent_" inverseName="student" inverseEntity="ClassOfStudent_" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Birthday_" positionX="-36" positionY="-36" width="128" height="103"/>
+        <element name="ClassOfStudent_" positionX="-171" positionY="-216" width="128" height="88"/>
+        <element name="Student_" positionX="-72" positionY="-423" width="128" height="135"/>
+    </elements>
+</model>
